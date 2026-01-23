@@ -20,9 +20,10 @@ public class PatientService {
     public List<PatientResponseDTO> getPatients (){
         List<Patient> patients = patientRepository.findAll();
 
-        List<PatientResponseDTO> patientResponseDTOS= patients.stream()
+        return patients.stream()
                 .map(patient -> PatientMapper.toDTO(patient)).toList();
 
     }
+
 
 }
